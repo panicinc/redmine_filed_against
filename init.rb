@@ -7,9 +7,9 @@ require_dependency 'project_hooks'
 require_dependency 'issue_hooks'
 require_dependency 'issue_helper_patch'
 
-Redmine::Plugin.register :redmine_panic_filed_against do
-  name 'Redmine Panic Filed-Against plugin'
-  author 'James Moore'
+Redmine::Plugin.register :redmine_filed_against do
+  name 'Redmine Filed Against plugin'
+  author 'James Moore (Panic Inc.)'
   description 'Adds a filed_against field to issues'
   
   version '1.0.0'
