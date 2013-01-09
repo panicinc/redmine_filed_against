@@ -1,0 +1,6 @@
+<% unless @issue.disabled_core_fields.include?('filed_version_id') %>
+<tr>
+	<td><b><%= l(:field_filed_version) %>:</b></td>
+  <td><%= (@issue.filed_version ? link_to_version(@issue.filed_version) : "-") %></td>
+</tr>
+<% end %>

@@ -1,0 +1,4 @@
+<% if @issue.safe_attribute?('filed_version_id') && @issue.assignable_versions.any? %>
+<p><%= f.select :filed_version_id, version_options_for_select(@issue.assignable_versions, @issue.new_record? ? @project.default_version : @issue.filed_version), :include_blank => true, :required => true %>
+</p>
+<% end %>
