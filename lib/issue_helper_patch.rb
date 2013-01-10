@@ -60,7 +60,7 @@ module IssueHelperPatch
 
 
       else
-				show_detail(detail, no_html, options)
+				show_detail_without_filed_version(detail, no_html, options)
 			end
 		end
 	end
