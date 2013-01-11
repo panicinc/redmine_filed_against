@@ -12,7 +12,7 @@ module IssueHelperPatch
   module InstanceMethods
 
 		def show_detail_with_filed_version(detail, no_html=false, options={})
-			
+			multiple = false
 			if detail.property == 'attr' && detail.prop_key == "filed_version_id"
 	      field = detail.prop_key.to_s.gsub(/\_id$/, "")
 	      label = l(("field_" + field).to_sym)
