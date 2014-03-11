@@ -1,6 +1,6 @@
 <% unless @issue.disabled_core_fields.include?('filed_version_id') %>
 <tr>
 	<td><b><%= l(:field_filed_version) %>:</b></td>
-  <td><%= (@issue.filed_version ? link_to_version(@issue.filed_version) : "-") %></td>
+  <td><%== @issue.filed_version.closed? ? "<strike>" : "" %><%= (@issue.filed_version ? link_to_version(@issue.filed_version) : "-") %><%== @issue.filed_version.closed? ? "</strike>" : "" %></td>
 </tr>
 <% end %>
