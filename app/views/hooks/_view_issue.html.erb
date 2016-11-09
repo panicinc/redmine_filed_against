@@ -1,14 +1,5 @@
-<% unless @issue.disabled_core_fields.include?('filed_version_id') %>
-<tr>
-	<td><b><%= l(:field_filed_version) %>:</b></td>
-  <td>
-	  <% if @issue.filed_version && @issue.filed_version.closed? %>
-	  <strike>
-	  <% end %>
-	  <%= (@issue.filed_version ? link_to_version(@issue.filed_version) : "-") %>
-	  <% if @issue.filed_version && @issue.filed_version.closed? %>
-	  </strike>
-	  <% end %>
-  </td>
-</tr>
-<% end %>
+<%= issue_fields_rows do |rows|
+  unless @issue.disabled_core_fields.include?('filed_version_id')
+    rows.right l(:field_filed_version), @issue.filed_version, :class => 'label'
+  end
+end %>
